@@ -11,18 +11,18 @@ export const SearchProvider = ({ children }) => {
      api.get(`&s=${input}`)
      .then(res =>{
          setCardSearch(res.data)
-         console.log(res.data)
+        //  console.log(res.data)
      })
  }
  const searchMovie= (movieId) => {
      api.get(`&i=${movieId}`)
      .then(res=>{
          setMovie(res.data)
-         console.log(res.data)
+        //  console.log(res.data)
      })
  }
 
  return(
-     <UserContext.Provider value={{searchCard, searchMovie}}>{children}</UserContext.Provider>
+     <UserContext.Provider value={{movie, cardSearch, searchCard, searchMovie}}>{children}</UserContext.Provider>
  )
 }
