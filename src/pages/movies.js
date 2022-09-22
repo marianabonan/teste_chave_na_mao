@@ -4,7 +4,7 @@ import { Header } from "../components/Header";
 import { UserContext } from "../Providers/useSearch";
 
 export const Movies = () => {
-    const {movie, cardSearch, searchCard, searchMovie} = useContext(UserContext) 
+    const { searchCard} = useContext(UserContext) 
 
     return (
         <>

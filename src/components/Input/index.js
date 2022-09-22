@@ -1,9 +1,7 @@
-import {useState} from "react"
 import { useDebounce } from "../useDebounce"
-
+import {BsSearch} from "react-icons/bs"
+import { Container } from "./styled"
 export const Input= ({searchCard}) => {
-
-    const {displayValue, setDisplayValue} = useState("text")
 
     const debouncedChange = useDebounce(searchCard , 500)
 
@@ -13,12 +11,14 @@ export const Input= ({searchCard}) => {
     }
 
     return(
+        <Container>
         <input
-        type="search"
-        value={displayValue}
+        type="text"
         onChange={handleChange}
+        placeholder="Digite o nome do filme aqui"
         />
-        
+        <BsSearch color={"#936262"}/>
+        </Container>
     )
 
 }
