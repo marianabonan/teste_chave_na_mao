@@ -1,13 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "./Providers/useSearch";
-import { Heather } from "./components/Heather";
+import { IndicePage } from "./pages/indice";
 
 
 function App() {
+
   const {searchCard, searchMovie} = useContext(UserContext) 
+  const {movieId, setMovieId} = useState()
   
   return (
-    <Heather searchCard={searchCard}/>
+    <IndicePage searchCard= {searchCard} setMovieId={setMovieId}/>
     // <div>
     //   <button onClick={() => searchMovie("tt0099012")}>pesquisar</button>
     // </div>
