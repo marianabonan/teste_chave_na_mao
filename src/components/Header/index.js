@@ -1,15 +1,12 @@
 import React from 'react';
-
-// import {HiMagnifyingGlass} from "react-icons/hi"
+import { Container } from './styled';
 import { Input } from '../Input';
 
 export const Header = ({searchCard, setMoviesList}) => {
 
   return (
-    <div>
-      <div>
+      <Container>
         <Input searchCard={searchCard} setMoviesList={setMoviesList}/>
-      </div>
-    </div>
+      </Container>
   );
 };
