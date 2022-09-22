@@ -7,6 +7,7 @@ export const Routers = () =>{
     return(
         <BrowserRouter>
             <Routes>
+                <Route path="*" element={<div> error 404</div>}/>
                 <Route path="/filmes" element={<Movies/>}/>
                 <Route path="/filmes/:id" element={<Movie/>}/>
             </Routes>
