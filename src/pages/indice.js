@@ -1,15 +1,13 @@
-import { useState} from "react";
+// import { Cards } from "../components/Cards";
 import { Cards } from "../components/Cards";
-import { Heather } from "../components/Heather";
+import { Header } from "../components/Header";
 
-export const IndicePage = (searchCard, setMovieId ) => {
-    const {moviesList, setMoviesList} = useState()
+export const IndicePage = ({searchCard, setMovieId, cardSearch }) => {
 
     return (
         <>
-        <Heather searchCard={searchCard} setMovieList={setMoviesList}/>
-        <Cards moviesList={moviesList}/>
+        <Header searchCard={searchCard} />
+        <Cards/>
         </>
     )
-
 }

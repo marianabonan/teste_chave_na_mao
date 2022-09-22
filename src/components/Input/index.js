@@ -5,7 +5,7 @@ export const Input= ({searchCard}) => {
 
     const {displayValue, setDisplayValue} = useState("text")
 
-    const debouncedChange = useDebounce(searchCard,500)
+    const debouncedChange = useDebounce(searchCard , 500)
 
     function handleChange(e){
         // setDisplayValue(e.target.value)

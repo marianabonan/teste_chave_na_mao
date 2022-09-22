@@ -8,10 +8,11 @@ export const SearchProvider = ({ children }) => {
  const [movie, setMovie] = useState()
  
  const searchCard= (input) => {
-     api.get(`&s=${input}`)
+    if(!input)return 
+    
+    api.get(`&s=${input}`)
      .then(res =>{
-         setCardSearch(res.data)
-        //  console.log(res.data)
+         setCardSearch(res.data.Search)
      })
  }
  const searchMovie= (movieId) => {

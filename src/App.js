@@ -1,18 +1,19 @@
 import { useContext, useState } from "react";
 import { UserContext } from "./Providers/useSearch";
 import { IndicePage } from "./pages/indice";
+import { Movie } from "./pages/movie";
 
 
 function App() {
 
-  const {searchCard, searchMovie} = useContext(UserContext) 
+  const {movie, cardSearch, searchCard, searchMovie} = useContext(UserContext) 
   const {movieId, setMovieId} = useState()
   
   return (
-    <IndicePage searchCard= {searchCard} setMovieId={setMovieId}/>
-    // <div>
-    //   <button onClick={() => searchMovie("tt0099012")}>pesquisar</button>
-    // </div>
+    <>
+    <IndicePage searchCard= {searchCard} setMovieId={setMovieId} cardSearch={cardSearch}/>
+    <Movie/>
+    </>
   );
 }
 

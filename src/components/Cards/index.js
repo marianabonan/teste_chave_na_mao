@@ -1,9 +1,15 @@
-export const Cards = (moviesList) => {
+import { useContext } from "react"
+import { UserContext } from "../../Providers/useSearch"
+
+export const Cards = () => {
+    const {cardSearch} = useContext(UserContext)
+
+    console.log(cardSearch)
 
     return(
         <div>
             <ul>
-                {moviesList.map((movie) =>{
+                {cardSearch?.map((movie) =>{
                     return(
                         <li key={movie.imdbID}>
                             <img src={movie.Poster} alt={`Poster de ${movie.Title}`}></img>
