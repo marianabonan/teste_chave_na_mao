@@ -6,7 +6,10 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         outline: 0;
     }
-    button:houver{
+    body{
+        background-color: #393636;
+    }
+    button:hover{
         cursor: pointer;
     }
     li{

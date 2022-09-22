@@ -6,13 +6,25 @@ export const UserContext = createContext()
 export const SearchProvider = ({ children }) => {
  const [cardSearch, setCardSearch] = useState()
  const [movie, setMovie] = useState()
+ const [page, setPage] = useState(1)
+ const [value,setValue] = useState()
+
+ console.log(page)
  
  const searchCard= (input) => {
     if(!input)return 
-    
-    api.get(`&s=${input}`)
+    if(input !== value){
+        setPage(1)
+    }
+    console.log('oi',page)
+    api.get(`&s=${input}&page=${page}`)
      .then(res =>{
-         setCardSearch(res.data.Search)
+         if(page===1){
+           setCardSearch(res.data.Search)  
+         }else{
+            setCardSearch([...cardSearch,...res.data.Search])
+         }
+         
      })
  }
  const searchMovie= (movieId) => {
@@ -23,7 +35,11 @@ export const SearchProvider = ({ children }) => {
      })
  }
 
+ const nextPage= () =>{
+     setPage(page + 1)
+ }
+
  return(
-     <UserContext.Provider value={{movie, cardSearch, searchCard, searchMovie}}>{children}</UserContext.Provider>
+     <UserContext.Provider value={{movie, cardSearch, searchCard, searchMovie, nextPage, setValue, page}}>{children}</UserContext.Provider>
  )
 }

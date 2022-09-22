@@ -8,7 +8,7 @@ export const Movie = () => {
   const { id } = useParams();
   const navigate = useNavigate()
 
-  const { searchMovie, movie: rawMovie } = useContext(UserContext);
+  const { searchMovie, movie: rawMovie, page } = useContext(UserContext);
 
   const [movie, setMovie] = useState()
 
@@ -18,8 +18,11 @@ export const Movie = () => {
     }else{
         setMovie(removeNA(rawMovie)) 
     }
-  }, [searchMovie, id]);
+  }, [id]);
 
+  useEffect(() =>{
+    searchMovie(id);
+  },[page])
   if(rawMovie?.Response === "False"){
     return navigate("*")
   }

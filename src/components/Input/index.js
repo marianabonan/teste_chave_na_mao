@@ -1,12 +1,16 @@
 import { useDebounce } from "../useDebounce"
 import {BsSearch} from "react-icons/bs"
 import { Container } from "./styled"
-export const Input= ({searchCard}) => {
+import { useContext } from "react"
+import { UserContext } from "../../Providers/useSearch"
 
-    const debouncedChange = useDebounce(searchCard , 500)
+export const Input= ({searchCard}) => {
+    const {setValue}=useContext(UserContext)
+
+    const debouncedChange = useDebounce(searchCard, 500)
 
     function handleChange(e){
-        // setDisplayValue(e.target.value)
+        setValue(e.target.value)
         debouncedChange(e.target.value)
     }
 

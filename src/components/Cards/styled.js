@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background-color: #393636;
 
   ul {
     display: flex;
@@ -43,3 +42,26 @@ export const Container = styled.div`
       font-size: 12px;
   }
 `;
+
+export const Box = styled.div`
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    p{
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    img{
+        width: 250px;
+        height: auto;
+    }
+    @media (min-width: 600px) {
+        img{
+            width: 400px;
+            height: auto;
+        }  
+    }
+`
