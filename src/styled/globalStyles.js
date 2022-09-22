@@ -12,10 +12,4 @@ export const GlobalStyle = createGlobalStyle`
     li{
         list-style-type: none;
     }
-
-    :root{
-        primary: #1E1E1E;
-        secondy: #393636;
-        tertiary: #936262
-    }
 `
