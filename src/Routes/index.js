@@ -1,12 +1,15 @@
-import {Switch, Route} from 'react-router-dom'
-import { IndicePage } from '../pages/indice'
+import {Routes, Route, BrowserRouter} from 'react-router-dom'
+import { Movie } from '../pages/movie'
+import { Movies} from '../pages/movies'
 
-const Routers = () =>{
+export const Routers = () =>{
+
     return(
-        <Switch>
-            <Route path="/">
-                <IndicePage/>
-            </Route>
-        </Switch>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/filmes" element={<Movies/>}/>
+                <Route path="/filmes/:id" element={<Movie/>}/>
+            </Routes>
+        </BrowserRouter>
     )
 }

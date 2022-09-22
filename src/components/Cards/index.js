@@ -1,10 +1,14 @@
 import { useContext } from "react"
+import { useNavigate } from "react-router-dom"
 import { UserContext } from "../../Providers/useSearch"
 
 export const Cards = () => {
     const {cardSearch} = useContext(UserContext)
+    const navigate = useNavigate()
 
-    console.log(cardSearch)
+    const handleClick = (id) =>{
+        navigate(`${id}`)
+    }
 
     return(
         <div>
@@ -16,7 +20,7 @@ export const Cards = () => {
                             <p>{movie.Title}</p>
                             <p>{movie.Year}</p>
                             <p>{movie.type}</p>
-                            <button>Ver mais sobre</button>
+                            <button onClick={() =>{ handleClick(movie.imdbID)}}>Ver mais sobre</button>
                         </li>
                     )
                 })}
